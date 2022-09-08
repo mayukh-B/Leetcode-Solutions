@@ -21,27 +21,21 @@ class Solution {
 //     }
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-         vector<int>ans;
-        // solve(root,ans);
-        if(!root)return ans;
-        
+        vector<int>res;
         stack<TreeNode*>st;
-       
         TreeNode* node = root;
-        
         while(true){
             if(node != NULL){
-               st.push(node);
-               node= node->left;
+                st.push(node);
+                node=node->left;
             }else{
                 if(st.empty())break;
-                node = st.top();
-                ans.push_back(node->val);
+                node= st.top();
+                res.push_back(node->val);
                 st.pop();
-                node=node->right;
+                node= node->right;
             }
-           
         }
-        return ans;
+        return res;
     }
 };
