@@ -9,7 +9,7 @@ public:
             A[x[1]+1]--;
         }
         for(i=1;i<n-1;i++) A[i] += A[i-1]; 
-       
-        return *max_element(A.begin(),A.end());
+        for(auto x: A) ans=max(ans, x); 
+        return ans;
     }
 };
